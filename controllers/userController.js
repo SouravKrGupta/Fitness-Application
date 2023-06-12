@@ -1,4 +1,4 @@
-const Users =require('../Fitness-Application/models/userModel')
+const Users =require('../models/userModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const userController = {
@@ -56,7 +56,20 @@ const userController = {
                 return res.status(500).json({msg:err.message})
                 
             }
-        }
+        },
+        //logout 
+        logoutUser : (req,res)=>{
+            try {
+                // Clear the token from the client-side (e.g., remove it from local storage or cookies)
+                res.clearCookie('token');
+            
+                // Return a success message
+                res.json({ msg: 'Logout successful' });
+              } catch (err) {
+                return res.status(500).json({ msg: err.message });
+              }
+        } 
+       
 }
 
 
