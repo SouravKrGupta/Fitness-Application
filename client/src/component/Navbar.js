@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Link } from 'react-router-dom';
+import Logo from '../assets/images/Logo.png'
 const Navbar = () => {
     const theme = useTheme();
     const navigate = useNavigate();
@@ -26,17 +28,39 @@ const Navbar = () => {
     backgroundColor={theme.palette.background.alt}
     p="1rem 6%"
     textAlign={"center"}
-    sx={{ boxShadow: 3, mb: 2 }}
+   
+  
   >
+      <Link to="/">
+      <img src={Logo} alt="logo" style={{ width: '48px', height: '48px',   margin: '0px 10px',
+    float: 'left' }} />
+    </Link>
       <Typography variant="h1" color="primary" fontWeight="bold">
         Fitness Application
       </Typography>
       {loggedIn ? (
        
         <Box sx={{ display: 'flex',gap:5, justifyContent: 'center' }} variant="h6" color="primary" fontWeight="bold">
+        
         <NavLink to="/" p={1} >
             Home
           </NavLink>
+          <NavLink to="/exercise" p={1} >
+            Exercise
+          </NavLink>
+          <NavLink to="/about" p={1} >
+            About
+          </NavLink>
+          <NavLink to="/calculator" p={1} >
+            Calculator
+          </NavLink>
+          <NavLink to="/blogs" p={1} >
+            Blogs
+          </NavLink>
+          <NavLink to="/diets" p={1} >
+            Diets
+          </NavLink>
+          
           <NavLink to="/login" onClick={handleLogout} p={1}>
             Logout
           </NavLink>
