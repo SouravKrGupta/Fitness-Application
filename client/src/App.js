@@ -11,6 +11,9 @@ import Login from "./component/Login";
 import Home from "./page/Home";
 import ExerciseDetail from "./page/ExerciseDetail";
 import Footer from "./component/Footer";
+
+import Bmi from "./Calculator/BmiCal";
+
 function App() {
   const theme = useMemo(() => createTheme(themeSettings()), []);
   return (
@@ -25,6 +28,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
           <Route path='/exercise/:id' element={<ExerciseDetail/>}/>
+          <Route path='/calculator' element={<Bmi/>}/>
         </Routes>
         <Footer/>
       </ThemeProvider>
