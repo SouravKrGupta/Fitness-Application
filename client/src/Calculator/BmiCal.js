@@ -13,16 +13,16 @@ const BmiCal = () => {
     if (weight === 0 || height === 0) {
       alert("Please enter a valid weight and height");
     } else {
-      let bmi = (weight / (height * height)) ;
+      let bmi = weight / (height * height);
       setBmi(bmi.toFixed(1));
 
       // Logic for message
 
-      if (bmi < 25) {
+      if (bmi < 18) {
         setMessage("You are underweight");
-      } else if (bmi >= 25 && bmi < 30) {
+      } else if (bmi >= 18 && bmi < 25.5) {
         setMessage("You are a healthy weight");
-      } else {
+      } else if (bmi > 25.5) {
         setMessage("You are overweight");
       }
     }
@@ -31,7 +31,7 @@ const BmiCal = () => {
   let imgSrc;
 
   if (bmi < 1) {
-    imgSrc =require("../assets/bmi/healthy1.png");
+    imgSrc = require("../assets/bmi/healthy1.png");
   } else {
     if (bmi < 25) {
       imgSrc = require("../assets/bmi/underweight.png");
@@ -43,8 +43,8 @@ const BmiCal = () => {
   }
 
   let reload = () => {
-    window.location.reload()
-  }
+    window.location.reload();
+  };
   return (
     <Box
       width={"75%"}
@@ -67,22 +67,21 @@ const BmiCal = () => {
         // margin="auto"
         boxShadow={"10px 10px 20px #ccc"}
       >
-        
-      <Typography
-        variant="h2"
-        textAlign={"center"}
-        fontWeight="bold"
-        padding={3}
-        color="red"
-      >
-        Body mass index
-      </Typography>
+        <Typography
+          variant="h2"
+          textAlign={"center"}
+          fontWeight="bold"
+          padding={3}
+          color="red"
+        >
+          Body mass index
+        </Typography>
         <form onSubmit={calcBmi}>
           <Box display="flex" flexDirection={"column"}>
             <InputLabel
               sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
             >
-              Weight (lbs)
+              Weight (in Kgs)
             </InputLabel>
             <TextField
               name="Weight"
@@ -95,7 +94,7 @@ const BmiCal = () => {
             <InputLabel
               sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
             >
-              Height (inch)
+              Height (in metres)
             </InputLabel>
             <TextField
               name="Hight"
@@ -118,7 +117,7 @@ const BmiCal = () => {
               color="primary"
               variant="contained"
               sx={{ m: 2 }}
-              onClick={reload} 
+              onClick={reload}
             >
               Reload
             </Button>
@@ -126,34 +125,29 @@ const BmiCal = () => {
         </form>
       </Box>
 
+      <Box
+        display="flex"
+        flexDirection={"column"}
+        width={"50%"}
+        border={3}
+        borderRadius={10}
+        padding={2}
+        margin="auto"
+        boxShadow={"10px 10px 20px #ccc"}
+        marginTop="30px"
+      >
+        <Typography variant="h3" textAlign={"center"} fontWeight="bold">
+          Your BMI is: {bmi}
+        </Typography>
+        <Typography variant="h4" textAlign={"center"}>
+          {message}
+        </Typography>
 
-      <Box   display="flex"
-     flexDirection={"column"}
-     width={"50%"}
-     border={3}
-     borderRadius={10}
-     padding={2}
-     margin="auto"
-     boxShadow={"10px 10px 20px #ccc"}
-
-     marginTop="30px">
-       <Typography variant="h3" textAlign={"center"} fontWeight="bold">
-         Your BMI is: {bmi}
-       </Typography>
-       <Typography variant="h4" textAlign={"center"}>
-         {message}
-       </Typography>
-
-     <Box  display="flex"
-     flexDirection={"column"}
-    
-     >
-       <img src={imgSrc}  />
-     </Box>
-     </Box>
-
+        <Box display="flex" flexDirection={"column"}>
+          <img src={imgSrc} alt="" />
+        </Box>
+      </Box>
     </Box>
-
   );
 };
 
