@@ -14,6 +14,7 @@ const indexOfLastExercise =currentPage * exercisesPerPage;
 const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
 const currentExercises =exercises.slice(indexOfFirstExercise,indexOfLastExercise);
 
+
 const paginate =(e,value) =>{
 setCurrentPage(value);
 
