@@ -144,7 +144,7 @@ const BmiCal = () => {
         </Typography>
 
         <Box display="flex" flexDirection={"column"}>
-          <img src={imgSrc} alt="" />
+          <img src={imgSrc} alt=""  />
         </Box>
       </Box>
     </Box>
