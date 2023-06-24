@@ -13,7 +13,7 @@ import ExerciseDetail from "./page/ExerciseDetail";
 import Footer from "./component/Footer";
 import About from "./About/about"
 import Bmi from "./Calculator/BmiCal";
-
+import Deit from "./Deits/deitHome";
 function App() {
   const theme = useMemo(() => createTheme(themeSettings()), []);
   return (
@@ -30,6 +30,7 @@ function App() {
           <Route path='/exercise/:id' element={<ExerciseDetail/>}/>
           <Route path='/calculator' element={<Bmi/>}/>
           <Route path='/about' element={<About/>}/>
+          <Route path='/diets' element={<Deit/>}/>
         </Routes>
         <Footer/>
       </ThemeProvider>
