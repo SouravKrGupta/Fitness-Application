@@ -102,7 +102,7 @@ const about = () => {
         </Typography>
       </Stack>
       <Grid container spacing={3}>
-    <Grid item xs={12} sm={6} md={4} lg={2}>
+    <Grid item xs={12} sm={6} md={4} lg={2.2}>
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
@@ -127,7 +127,7 @@ const about = () => {
         </CardActions>
       </Card>
     </Grid>
-    <Grid item xs={12} sm={6} md={4} lg={2}>
+    <Grid item xs={12} sm={6} md={4} lg={2.3}>
       <Card sx={{ maxWidth: 345}}>
         <CardActionArea>
           <CardMedia
@@ -152,7 +152,7 @@ const about = () => {
         </CardActions>
       </Card>
     </Grid>
-    <Grid item xs={12} sm={6} md={4} lg={2}>
+    <Grid item xs={12} sm={6} md={4} lg={2.3}>
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
@@ -177,7 +177,7 @@ const about = () => {
         </CardActions>
       </Card>
     </Grid>
-    <Grid item xs={12} sm={6} md={4} lg={2}>
+    <Grid item xs={12} sm={6} md={4} lg={2.3}>
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
@@ -202,7 +202,7 @@ const about = () => {
         </CardActions>
       </Card>
     </Grid>
-    <Grid item xs={12} sm={6} md={4} lg={2}>
+    <Grid item xs={12} sm={6} md={4} lg={2.3}>
       <Card sx={{ maxWidth: 345}}>
         <CardActionArea>
           <CardMedia
@@ -259,7 +259,9 @@ const about = () => {
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        >
+          
+        </iframe>
       </Box>
     </Box>
    </Box>
