@@ -18,12 +18,12 @@ const Contact = () => {
           Get in touch
         </Typography>
       </Stack>
-      <form>
+      <form action='https://formspree.io/f/xeqbjrog' method='POST'>
         <Box width="100%" maxWidth="700px">
           <InputLabel sx={{ mb: 1, mt: 2, fontSize: '24px', fontWeight: 'bold' }}>
             Your Name
           </InputLabel>
-          <TextField name="name" margin="normal" variant="outlined" required />
+          <TextField name="username" margin="normal" variant="outlined" required />
 
           <InputLabel sx={{ mb: 1, mt: 2, fontSize: '24px', fontWeight: 'bold' }}>
             Your email
